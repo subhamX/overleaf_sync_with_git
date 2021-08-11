@@ -1,0 +1,19 @@
+# action.yml
+name: "Overleaf Sync with Git"
+description: "TODO"
+
+inputs:
+  OVERLEAF_COOKIE: # id of input
+    description: "OVERLEAF_COOKIE"
+    required: true
+  OVERLEAF_PROJECT_ID: # id of input
+    description: "OVERLEAF_PROJECT_ID"
+    required: true
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.OVERLEAF_COOKIE }}
+    - ${{ inputs.OVERLEAF_PROJECT_ID }}
+

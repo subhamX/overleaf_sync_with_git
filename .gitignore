@@ -1,0 +1,10 @@
+**/**
+README.md
+
+!src/
+!src/**
+!.gitignore
+!action.yml
+!Dockerfile
+!.github/
+!.github/**
