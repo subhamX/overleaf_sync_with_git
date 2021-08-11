@@ -1,13 +1,17 @@
 # action.yml
 name: "Overleaf Sync with Git"
-description: "TODO"
+branding:
+  icon: 'align-center'  
+  color: 'yellow'
+description: "🤖 A GitHub action to take backups from OverLeaf which is an Online LaTeX Editor."
+
 
 inputs:
   OVERLEAF_COOKIE: # id of input
-    description: "OVERLEAF_COOKIE"
+    description: "Active Cookie of overleaf account"
     required: true
   OVERLEAF_PROJECT_ID: # id of input
-    description: "OVERLEAF_PROJECT_ID"
+    description: "Id of the project you want the bot to take automatic snapshot"
     required: true
 
 runs:
