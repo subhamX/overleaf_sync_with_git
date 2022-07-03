@@ -10,11 +10,12 @@ PROJECT_ID="$INPUT_OVERLEAF_PROJECT_ID"
 ZIP_OUTPUT_PATH="${1}/main.zip"
 EXTRACTED_FILES_PATH="./artifacts/"
 COOKIE="$INPUT_OVERLEAF_COOKIE"
+HOST="$INPUT_OVERLEAF_HOST"
 
 echo "Dumping zip file at $ZIP_OUTPUT_PATH"
 
-curl "https://www.overleaf.com/project/$PROJECT_ID/download/zip" \
-  -H 'authority: www.overleaf.com' \
+curl "https://$HOST/project/$PROJECT_ID/download/zip" \
+  -H "authority: $HOST" \
   -H 'pragma: no-cache' \
   -H 'cache-control: no-cache' \
   -H 'upgrade-insecure-requests: 1' \
