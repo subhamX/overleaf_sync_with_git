@@ -13,6 +13,10 @@ inputs:
   OVERLEAF_PROJECT_ID: # id of input
     description: "Id of the project you want the bot to take automatic snapshot"
     required: true
+  OVERLEAF_HOST:
+    description: "Hostname of your Overleaf Instance, default is www.overleaf.com"
+    default: "www.overleaf.com"
+
 
 runs:
   using: "docker"
@@ -20,4 +24,5 @@ runs:
   args:
     - ${{ inputs.OVERLEAF_COOKIE }}
     - ${{ inputs.OVERLEAF_PROJECT_ID }}
+    - ${{ inputs.OVERLEAF_HOST }}
 
