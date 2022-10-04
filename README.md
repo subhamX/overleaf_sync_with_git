@@ -59,12 +59,9 @@ This value is a bit trickier to find. It is used to authenticate the action agai
 In either case open the developer console (Hotkey F12). For Firefox look for the ```Storage``` tab and then select ```Cookies```. For Edge the same setting can be found under ```Application``` and then ```Storage -> Cookies```.
 Look for a cookie with the name ```overleaf_session2``` and copy its value.
 
-This github action expects a certain key-value syntax for the cookie to work:
-```
-Cookie: overleaf_session2=<YOUR_SESSION_COOKIE_VALUE>
-```
+This cookie is only be valid for a limited time and needs to be replaced after a while.
 
-> Note: More finer details will be added here soon. 
+> Note: More finer details will be added here soon.
 
 ## Optional Parameters
 ### OVERLEAF_HOST
