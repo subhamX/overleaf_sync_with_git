@@ -59,9 +59,12 @@ This value is a bit trickier to find. It is used to authenticate the action agai
 In either case open the developer console (Hotkey F12). For Firefox look for the ```Storage``` tab and then select ```Cookies```. For Edge the same setting can be found under ```Application``` and then ```Storage -> Cookies```.
 Look for a cookie with the name ```overleaf_session2``` and copy its value.
 
-This cookie is only be valid for a limited time and needs to be replaced after a while.
+> **IMPORTANT:** I would recommend that after you copy overleaf_session2 cookie and put it in the GitHub actions secret, please delete the cookie from the browser. And then start a new browser session (by logging in again) if required. **Please do not logout,** it will make overleaf revoke the credentials. If you follow the above point, then the cookie should remain active for atleast 2 months, and the workflow should work without any issues. We've tested it in early 2023 by working a sample workflow for couple of months, and you can find the insights [here](https://github.com/subhamX/overleaf_sync_with_git/pull/4#issuecomment-1355116634).
 
-> Note: More finer details will be added here soon.
+In the following case, please put `s%3A3xxaFrMMXWi1xxxtm23BjBYJTc8GAb7P.xxyxxzhxxrPJxxovoxxaafnxx9ZorxxP6YxxzxfxxIo` as the OVERLEAF_COOKIE value.
+
+<img width="1357" alt="image" src="https://user-images.githubusercontent.com/43654114/219082856-5a235fe7-5884-4b2f-b176-52912dd863ae.png">
+
 
 ## Optional Parameters
 ### OVERLEAF_HOST
