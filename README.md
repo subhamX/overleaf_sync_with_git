@@ -8,7 +8,9 @@
 
 Ensure that you have set **OVERLEAF_COOKIE** and **OVERLEAF_PROJECT_ID** as GitHub secrets. Head over to [this link](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository) to get more info on how to add secrets to a GitHub repo.
 
-You may also need to edit your project settings to allow workflows to write to your repository.
+You may also need to edit your project settings to allow workflows to write to your repository. Click on Settings -> then Actions and ensure that under Workflow permissions you've provided Read and write permissions to workflow.
+![image](https://github.com/MattHeffNT/overleaf_sync_with_git/assets/43654114/a1a7203c-3ff4-4712-ba3e-d32df0605b50)
+
 
 Once you have set the secrets. Just create a new workflow file in `.github/workflows/FILE_NAME.yml` and add the following content.
 ```yaml
