@@ -25,6 +25,25 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Delete Old Artifacts
+      uses: actions/github-script@v6
+      id: artifact
+      with:
+        script: |
+          const res = await github.rest.actions.listArtifactsForRepo({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+          })
+
+          res.data.artifacts
+            .forEach(({ id }) => {
+              github.rest.actions.deleteArtifact({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                artifact_id: id,
+              })
+            })
+
     - name: Fetch the latest version from overleaf server
       uses: subhamx/overleaf_sync_with_git@master
       with:
@@ -32,7 +51,7 @@ jobs:
         OVERLEAF_COOKIE: ${{ secrets.OVERLEAF_COOKIE }}
 
     - name: Upload to Project Artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: project
         path: ./artifacts/
