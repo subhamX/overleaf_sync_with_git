@@ -80,9 +80,9 @@ The project ID of the following URL ```https://www.overleaf.com/project/12345a6b
 This value is a bit trickier to find. It is used to authenticate the action against the Overleaf servers. It is part of the cookie that Overleaf sets in your browser after you successfully login. The process of extracting the required value differs from browser to browser.
 
 In either case open the developer console (Hotkey F12). For Firefox look for the ```Storage``` tab and then select ```Cookies```. For Edge the same setting can be found under ```Application``` and then ```Storage -> Cookies```.
-Look for a cookie with the name ```overleaf_session2``` and copy its value.
+Look for a cookie with the name ```overleaf.sid``` and copy its value.
 
-> **IMPORTANT:** I would recommend that after you copy overleaf_session2 cookie and put it in the GitHub actions secret, please delete the cookie from the browser. And then start a new browser session (by logging in again) if required. **Please do not logout,** it will make overleaf revoke the credentials. If you follow the above point, then the cookie should remain active for atleast 2 months, and the workflow should work without any issues. We've tested it in early 2023 by working a sample workflow for couple of months, and you can find the insights [here](https://github.com/subhamX/overleaf_sync_with_git/pull/4#issuecomment-1355116634).
+> **IMPORTANT:** I would recommend that after you copy overleaf.sid cookie and put it in the GitHub actions secret, please delete the cookie from the browser. And then start a new browser session (by logging in again) if required. **Please do not logout,** it will make overleaf revoke the credentials. If you follow the above point, then the cookie should remain active for atleast 2 months, and the workflow should work without any issues. We've tested it in early 2023 by working a sample workflow for couple of months, and you can find the insights [here](https://github.com/subhamX/overleaf_sync_with_git/pull/4#issuecomment-1355116634).
 
 In the following case, please put `s%3A3xxaFrMMXWi1xxxtm23BjBYJTc8GAb7P.xxyxxzhxxrPJxxovoxxaafnxx9ZorxxP6YxxzxfxxIo` as the OVERLEAF_COOKIE value.
 
