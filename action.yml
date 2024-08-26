@@ -7,9 +7,12 @@ description: "🤖 A GitHub action to take backups from OverLeaf which is an Onl
 
 
 inputs:
-  OVERLEAF_COOKIE: # id of input
+  OVERLEAF_COOKIE:
     description: "Active Cookie of overleaf account"
     required: true
+  OVERLEAF_COOKIE_KEY:
+    description: "The key of the cookie, default is overleaf_session2"
+    default: "overleaf_session2"
   OVERLEAF_PROJECT_ID: # id of input
     description: "Id of the project you want the bot to take automatic snapshot"
     required: true
@@ -23,6 +26,7 @@ runs:
   image: "Dockerfile"
   args:
     - ${{ inputs.OVERLEAF_COOKIE }}
+    - ${{ inputs.OVERLEAF_COOKIE_KEY }}
     - ${{ inputs.OVERLEAF_PROJECT_ID }}
     - ${{ inputs.OVERLEAF_HOST }}
 
