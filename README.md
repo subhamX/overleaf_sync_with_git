@@ -1,7 +1,7 @@
 # Overleaf Sync with Git
 
 
-🤖 A GitHub action to take backups from OverLeaf which is an Online LaTeX Editor.
+🤖 Automatically sync and backup your Overleaf projects to Git - works with online, self-hosted, and other LaTeX editors
 
 
 ## Usage
