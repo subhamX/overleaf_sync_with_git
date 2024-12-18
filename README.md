@@ -102,3 +102,16 @@ To set the value, just add the environment variable to the actions step, as seen
         OVERLEAF_COOKIE: ${{ secrets.OVERLEAF_COOKIE }}
         OVERLEAF_HOST: ${{ secrets.OVERLEAF_HOST }}
 ```
+
+### OVERLEAF_COOKIE_KEY
+The OVERLEAF_COOKIE_KEY parameter can be used to sync with a self-hosted Community Edition or Server Pro Overleaf instance. Since some instances use differnt names for the authentification cooke (e.g overleaf.sid) the name of the cookie can be changed using this parameter. The parameter defaults to `overleaf_session2`, when not set.
+
+To set the value, just add the environment variable to the actions step, as seen below:
+```
+    - name: Fetch the latest version from overleaf server
+      uses: subhamx/overleaf_sync_with_git@master
+      with:
+        OVERLEAF_PROJECT_ID: ${{ secrets.OVERLEAF_PROJECT_ID }}
+        OVERLEAF_COOKIE: ${{ secrets.OVERLEAF_COOKIE }}
+        OVERLEAF_COOKIE_KEY: ${{ secrets.OVERLEAF_COOKIE_KEY }}
+```
